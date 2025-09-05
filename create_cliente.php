@@ -33,7 +33,7 @@ if ($conn->query($sql) === TRUE) {
 </head>
 <body>
 
-<form action="create.php" method="post">
+<form action="create_cliente.php" method="post">
 
 <label for="nome">Nome:</label>
 <input type="text" name = "nome" required>
@@ -54,3 +54,4 @@ if ($conn->query($sql) === TRUE) {
     
 </body>
 </html>
+
