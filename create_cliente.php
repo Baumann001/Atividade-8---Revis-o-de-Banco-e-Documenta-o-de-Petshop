@@ -13,6 +13,7 @@ $email = $_POST['email'];
 
 $sql = "INSERT INTO cliente (nome, cpf, telefone, email) VALUES ('$nome', '$cpf', '$telefone', '$email')";
 
+
 if ($conn->query($sql) === TRUE) {
     echo "Cliente inserido com sucesso!";
 } else {
