@@ -24,15 +24,27 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 ?>
 
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Pet</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Pet Shop - Cadastro de Pet</h1>
+        <nav id="menu-principal">
+            <a href="index.php">Home</a>
+            <a href="create_servico.php">Criar Serviço</a>
+            <a href="create_agendamento.php">Agendar Atendimento</a>
+            <a href="create_cliente.php">Adicionar Cliente</a>
+        </nav>
+    </header>
 
-<form action="create_pet.php" method="post">
+    <main>
+        <form action="create_pet.php" method="post">
 
 <label for="cliente_id">Cliente:</label>
 <select name="cliente_id" required>

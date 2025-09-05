@@ -24,27 +24,44 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 ?>
 
 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro de Serviço</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="create_servico.php" method="post">
+    <header>
+        <h1>Pet Shop - Cadastro de Serviço</h1>
+        <nav id="menu-principal">
+            <a href="index.php">Home</a>
+            <a href="create_agendamento.php">Agendar Atendimento</a>
+            <a href="create_cliente.php">Adicionar Cliente</a>
+            <a href="create_pet.php">Adicionar Pet</a>
+        </nav>
+    </header>
 
-<label for="nome">Nome:</label>
-<input type="text" name="nome" required><br><br>
+    <main>
+        <form action="create_servico.php" method="post">
 
-<label for="preco">Preço:</label>
-<input type="number" step="0.01" name="preco" required><br><br>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" required><br><br>
 
-<label for="duracao_min">Duração (min):</label>
-<input type="number" name="duracao_min" required><br><br>
+        <label for="preco">Preço:</label>
+        <input type="number" step="0.01" name="preco" required><br><br>
 
+        <label for="duracao_min">Duração (min):</label>
+        <input type="number" name="duracao_min" required><br><br>
 
+        <input type="submit" value="Adicionar">
 
-<input type="submit" value="Adicionar">
-    
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Pet Shop. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>

@@ -29,57 +29,73 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 ?>
 
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Agendamento</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Pet Shop - Cadastro de Agendamento</h1>
+        <nav id="menu-principal">
+            <a href="index.php">Home</a>
+            <a href="create_servico.php">Criar Serviço</a>
+            <a href="create_cliente.php">Adicionar Cliente</a>
+            <a href="create_pet.php">Adicionar Pet</a>
+        </nav>
+    </header>
 
-<form action="create_agendamento.php" method="post">
+    <main>
+        <form action="create_agendamento.php" method="post">
 
-<label for="pet_id">Pet:</label>
-<select name="pet_id" required>
-    <option value="">Selecione um pet</option>
-    <?php
-    if ($result_pets->num_rows > 0) {
-        while($row = $result_pets->fetch_assoc()) {
-            echo "<option value='" . $row['id'] . "'>" . $row['pet_nome'] . " (" . $row['cliente_nome'] . ")</option>";
-        }
-    }
-    ?>
-</select><br><br>
+        <label for="pet_id">Pet:</label>
+        <select name="pet_id" required>
+            <option value="">Selecione um pet</option>
+            <?php
+            if ($result_pets->num_rows > 0) {
+                while($row = $result_pets->fetch_assoc()) {
+                    echo "<option value='" . $row['id'] . "'>" . $row['pet_nome'] . " (" . $row['cliente_nome'] . ")</option>";
+                }
+            }
+            ?>
+        </select><br><br>
 
-<label for="servico_id">Serviço:</label>
-<select name="servico_id" required>
-    <option value="">Selecione um serviço</option>
-    <?php
-    if ($result_servicos->num_rows > 0) {
-        while($row = $result_servicos->fetch_assoc()) {
-            echo "<option value='" . $row['id'] . "'>" . $row['nome'] . "</option>";
-        }
-    }
-    ?>
-</select><br><br>
+        <label for="servico_id">Serviço:</label>
+        <select name="servico_id" required>
+            <option value="">Selecione um serviço</option>
+            <?php
+            if ($result_servicos->num_rows > 0) {
+                while($row = $result_servicos->fetch_assoc()) {
+                    echo "<option value='" . $row['id'] . "'>" . $row['nome'] . "</option>";
+                }
+            }
+            ?>
+        </select><br><br>
 
-<label for="data_hora">Data e Hora:</label>
-<input type="datetime-local" name="data_hora" required><br><br>
+        <label for="data_hora">Data e Hora:</label>
+        <input type="datetime-local" name="data_hora" required><br><br>
 
-<label for="status">Status:</label>
-<select name="status" required>
-    <option value="">Selecione o status</option>
-    <option value="agendado">Agendado</option>
-    <option value="concluido">Concluído</option>
-    <option value="cancelado">Cancelado</option>
-</select><br><br>
+        <label for="status">Status:</label>
+        <select name="status" required>
+            <option value="">Selecione o status</option>
+            <option value="agendado">Agendado</option>
+            <option value="concluido">Concluído</option>
+            <option value="cancelado">Cancelado</option>
+        </select><br><br>
 
-<label for="observacoes">Observações:</label>
-<textarea name="observacoes"></textarea><br><br>
+        <label for="observacoes">Observações:</label>
+        <textarea name="observacoes"></textarea><br><br>
 
-<input type="submit" value="Agendar">
+        <input type="submit" value="Agendar">
 
-</form>
+        </form>
+    </main>
 
+    <footer>
+        <p>&copy; 2023 Pet Shop. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
