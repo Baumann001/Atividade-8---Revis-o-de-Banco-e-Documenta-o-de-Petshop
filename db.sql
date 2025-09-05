@@ -43,3 +43,4 @@ CREATE TABLE agendamento (
     FOREIGN KEY (pet_id) REFERENCES pet(id),
     FOREIGN KEY (servico_id) REFERENCES servico(id)
 );
+
