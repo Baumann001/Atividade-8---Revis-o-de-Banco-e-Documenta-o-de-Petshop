@@ -6,7 +6,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
 
 $nome = $_POST['nome'];
-$id = $_POST['id'];
 $cpf = $_POST['cpf'];
 $telefone  = $_POST['telefone'];
 $email = $_POST['email'];
